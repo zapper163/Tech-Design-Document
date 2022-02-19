@@ -9,7 +9,20 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 # TECH DESIGN DOCUMENT (TDD)
 
 ### General Info
+
+A Technical Design Document (TDD) is written by the development team and describes the minute detail of either the entire design or specific parts of it, such as:
+
+- The signature of an interface, including all data types/structures required (input data types, output data types, exceptions)
+- Detailed class models that include all methods, attributes, dependencies, and associations
+- The specific algorithms that a component employs and how they work
+- Physical data models that include attributes and types of each entity/data type
+
+In short, the functional design specifies how a program will behave to outside agents and the technical design describes how that functionality is to be implemented in code. The Technical Design Document must be approved by the IT project sponsor before proceeding to the development/integration phase.
 A technical design doc describes a solution to a given technical problem. It is a specification, or “design blueprint”, for a software program or feature.
+
+[Source](https://uit.stanford.edu/pmo/technical-design)
+
+
 The primary function of a TDD is to communicate the technical details of the work to be done to members of the team.
 
 However, there is a second purpose which is just as important: the process of writing the TDD forces you to organize your thoughts and consider every aspect of the design, ensuring that you haven’t left anything out.
@@ -43,38 +56,73 @@ This process also happens at different scales and levels of granularity. A PRD /
 
 ## TDD Template
 
-### Title TDD
-Author: Your Name
+1. **Description of the Problem**
+Give a brief (one paragraph) summary of the problem you are solving. Work to keep away from technical detail. Try instead to talk about this in terms of the problem as it pertains to your customers. At the end of reading this document, any team member should be able to understand the problem, how you intend to solve it, and who are the stakeholders.
 
-### **Introduction**
-### Rationale
-What are you trying to accomplish? What’s wrong with things the way they are now?
-### Background
-Describe any historical context that would be needed to understand the document, including legacy considerations.
-### Terminology
-If the document uses any special words or terms, list them here.
-### Non-Goals
-If there are related problems that you have decided not to address with this design, but which someone might conceivably expect you to solve, then list them here.
-### Proposed Design
-Start with a brief, high-level description of the solution. The following sections will go into more detail.
-### System Architecture
-If the design consists of a collaboration between multiple large-scale components, list those components here — or better, include a diagram.
-### Data Model
-Describe how the data is stored. This could include a description of the database schema.
-### Interface/API Definitions
-Describe how the various components talk to each other. For example, if there are REST endpoints, describe the endpoint URL and the format of the data and parameters used.
-### Business Logic
-If the design requires any non-trivial algorithms or logic, describe them.
-### Migration Strategy
-If the design incurs non-backwards-compatible changes to an existing system, describe the process whereby entities that depend on the system are going to migrate to the new design.
-### Impact
-Describe the potential impacts of the design on overall performance, security, and other aspects of the system.
-### Risks
-If there are any risks or unknowns, list them here. Also if there is additional research to be done, mention that as well.
-### Alternatives
-If there are other potential solutions which were considered and rejected, list them here, as well as the reason why they were not chosen.
+2. **Solution Requirements**
+Briefly describe what is required of a solution which addresses the problem. Try to steer clear of the how (implementation detail) and concentrate on what is required any solution in order to address the problem outlined above.
 
+3. **Glossary**
+Link to the service wide glossary, and define any new terms used in this document.
 
+4. **Out of Scope (Non-goals)**
+Explicitly call out what is not in scope (Sometimes articulating what you are not going to do is an easier way to define scope than to talk about what you are going to do.)
+
+5. **Assumptions**
+What are you assuming will be true or in place to make your solution successful?
+
+6. **Solution**
+Your solution goes here.
+
+Start by including a high level diagram and decompose from there. Please diagram (where possible) how your solution interacts with other subsystems and services (including sequence diagrams for complex interactions).
+
+Aim to answer:
+- What are you going to deliver?
+- What are your upstream and downstream dependencies?
+- How does it fit in to the broader service?
+- How will it scale?
+- What are the limits of your solution?
+- How will you ensure fault tolerance and quick recovery after failure?
+- How might your solution evolve to meet future requirements?
+
+7. **Security Considerations**
+What are the security implications of your solution? If your solution is large enough in scope to warrant its own threat model, please add it here, otherwise please describe how your solution impacts existing threat models.
+
+8. **Cost Analysis**
+A high level analysis of the costs that will be incurred in running your chosen solution on a day-to-day basis.
+
+9. **Cross-region Considerations**
+If applicable, how does your solution optimize or is compatible with cross-region requirements. This includes data transfer costs between regions, availability of the service in different data centers, latency issues, etc.
+
+10. **Operational Readiness Considerations**
+Discuss how your solution will support operational excellence, ensuring customer satisfaction with a frugal level of support.
+
+Aim to answer:
+- How your chosen solution will be deployed?
+- What metrics and alarms will be key to monitoring the health of your solution?
+- How are your solution limits enforced?
+- Will there be any throttling or blacklisting mechanisms in place?
+- Will there be any data recovery mechanisms in place?
+- If this is a multi-tenant solution, how are you dealing with noisy neighbor issues?
+- How will your solution be debugged when problems occur?
+- How will your solution recover in case of a brown-out?
+- Are there any operational tools required for your solution?
+
+11. **Risks and Open Issues**
+If there are any risks or unknowns, list them here. Are there any open questions which could impact your design for which you do not currently have answers? How are you going to get answers? Will any required team members be loaned to other teams during the time slated for implementation? Are all of required dependencies available in all the regions you need them? What are the one way doors, and are we sure we want to go through them?
+12. **Solutions considered and discarded**
+What alternatives have you have considered and discarded? Why don’t these work? Be brief, linking to other documents for details is ok, but always provide a summary inline.
+Only alternative solutions that an impartial observer would deem credible need be documented.
+If an alternative solution is not appropriate now, but may be in the future, please discuss potential migration paths.
+
+13. **Work Required**
+Include a high level breakdown of the work required to implement your proposed solution where appropriate. Also, specifically call out if this solution requires resources from other teams to be completed (away teams, dependencies etc.)
+
+14. **High-level Test Plan**
+At a high level, describe how your chosen solution be tested.
+
+15. **References**
+Links to any other documents that may be relevant, or sources you wish to cite.
 
 
 
@@ -124,11 +172,3 @@ Syntax highlighted code block
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zapper163/Tech-Design-Document/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
