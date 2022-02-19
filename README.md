@@ -8,6 +8,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 # TECH DESIGN DOCUMENT (TDD)
 
+[How to write a better technical design document](https://www.range.co/blog/better-tech-specs)<--Mirar
+[How to write technical design docs](https://dev.to/mage_ai/how-to-write-technical-design-docs-c02)
 ### General Info
 
 A Technical Design Document (TDD) is written by the development team and describes the minute detail of either the entire design or specific parts of it, such as:
