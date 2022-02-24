@@ -1,52 +1,14 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/zapper163/Tech-Design-Document/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-
-
 # TECH DESIGN DOCUMENT (TDD)
 
 [How to write a better technical design document](https://www.range.co/blog/better-tech-specs)<--Mirar
 
 [How to write technical design docs](https://dev.to/mage_ai/how-to-write-technical-design-docs-c02)
-### General Info
-
-A Technical Design Document (TDD) is written by the development team and describes the minute detail of either the entire design or specific parts of it, such as:
-
-- The signature of an interface, including all data types/structures required (input data types, output data types, exceptions)
-- Detailed class models that include all methods, attributes, dependencies, and associations
-- The specific algorithms that a component employs and how they work
-- Physical data models that include attributes and types of each entity/data type
-
-In short, the functional design specifies how a program will behave to outside agents and the technical design describes how that functionality is to be implemented in code. The Technical Design Document must be approved by the IT project sponsor before proceeding to the development/integration phase.
-A technical design doc describes a solution to a given technical problem. It is a specification, or “design blueprint”, for a software program or feature.
-
-[Source](https://uit.stanford.edu/pmo/technical-design)
 
 
-The primary function of a TDD is to communicate the technical details of the work to be done to members of the team.
+## Introduction
+The Technical Design Document provides a blueprint for the software engineers in your team to implement and code the features of your game. The technical design document will let your developers to specify - what are the requirements, how they should be implemented, along with the tools and technologies required for the implementation. The connection between structural design of a Software and Technical Design Document is that the technical design document has a broader scope with less details, than a software architecture diagram.
 
-However, there is a second purpose which is just as important: the process of writing the TDD forces you to organize your thoughts and consider every aspect of the design, ensuring that you haven’t left anything out.
-
-Technical design docs are often part of a larger process which typically has the following steps:
-1. **Product requirements are defined**
-These will typically be represented by a Product Requirements Document (PRD). The PRD specifies what the system needs to do, from the perspective of a user or outside agent.
-
-2. **Technical requirements are defined**
-The product requirements are translated into technical requirements — what the system needs to accomplish, but now how it does it. The output of this step is a Technical Requirements Document (TRD).
-
-3. **Technical design**
-This contains a technical description of the solution to the requirements outlined in the previous steps. The TDD is the output of this step.
-
-4. **Implementation**
-This is the stage where the solution is actually built.
-
-5. **Testing**
-The system is tested against the PRD and TRD to ensure that it actually fulfills the specified requirements.
-
-Between each of these stages there is typically a review process to ensure that no mistakes were made. If any errors, misunderstandings, or ambiguities are detected, these must be corrected before proceeding to the next step.
+The primary function of a TDD is to communicate the technical details of the work to be done to members of the team. However, there is a second purpose which is just as important: the process of writing the TDD forces you to organize your thoughts and consider every aspect of the design, ensuring that you haven’t left anything out.
 
 This process is highly variable; the set of steps listed here will change on a case-by-case basis. For example:
 For smaller features that don’t involve a lot of complexity, steps 2 and 3 will often be combined into a single document.
@@ -54,84 +16,99 @@ If the feature involves a large number of unknowns or some level of research, it
 
 This process also happens at different scales and levels of granularity. A PRD / TRD / TDD may concern the design of an entire system, or just a single feature. In most environments, the process is also cyclic — each design/implement cycle builds on the work of the previous one.
 
+## Content
+
+A TDD generally contains the following information:
+
+- List of all features.
+- Choice of Game engine
+- High level diagrams
+- Details about the 3D objects, terrain, scenes.
+- Use of Physics Engine
+- Game logic and artificial intelligence
+- Audio and Visual details and specifications
+- Networking
+- Delivery platform & hardware/software requirements for running the game on a system.
+
+[Source](https://www.studytonight.com/3d-game-engineering-with-unity/tdd-and-gdd)
 [Source](https://medium.com/machine-words/writing-technical-design-docs-71f446e42f2e)
 
 
 ## TDD Template
 
-1. **Description of the Problem**
-Give a brief (one paragraph) summary of the problem you are solving. Work to keep away from technical detail. Try instead to talk about this in terms of the problem as it pertains to your customers. At the end of reading this document, any team member should be able to understand the problem, how you intend to solve it, and who are the stakeholders.
+### Technical goals
+The technical goals are a list of objectives set to ensure everyone inside the team knows where to aim when working. They define what is expected to achieve in relation to the code, the game engine or the platform where the game is going to be delivered. Some examples would be immersive ambient sound, complex AI or realistic shadows.
 
-2. **Solution Requirements**
-Briefly describe what is required of a solution which addresses the problem. Try to steer clear of the how (implementation detail) and concentrate on what is required any solution in order to address the problem outlined above.
-
-3. **Glossary**
-Link to the service wide glossary, and define any new terms used in this document.
-
-4. **Out of Scope (Non-goals)**
-Explicitly call out what is not in scope (Sometimes articulating what you are not going to do is an easier way to define scope than to talk about what you are going to do.)
-
-5. **Assumptions**
-What are you assuming will be true or in place to make your solution successful?
-
-6. **Solution**
-Your solution goes here.
-
-Start by including a high level diagram and decompose from there. Please diagram (where possible) how your solution interacts with other subsystems and services (including sequence diagrams for complex interactions).
-
-Aim to answer:
-- What are you going to deliver?
-- What are your upstream and downstream dependencies?
-- How does it fit in to the broader service?
-- How will it scale?
-- What are the limits of your solution?
-- How will you ensure fault tolerance and quick recovery after failure?
-- How might your solution evolve to meet future requirements?
-
-7. **Security Considerations**
-What are the security implications of your solution? If your solution is large enough in scope to warrant its own threat model, please add it here, otherwise please describe how your solution impacts existing threat models.
-
-8. **Cost Analysis**
-A high level analysis of the costs that will be incurred in running your chosen solution on a day-to-day basis.
-
-9. **Cross-region Considerations**
-If applicable, how does your solution optimize or is compatible with cross-region requirements. This includes data transfer costs between regions, availability of the service in different data centers, latency issues, etc.
-
-10. **Operational Readiness Considerations**
-Discuss how your solution will support operational excellence, ensuring customer satisfaction with a frugal level of support.
-
-Aim to answer:
-- How your chosen solution will be deployed?
-- What metrics and alarms will be key to monitoring the health of your solution?
-- How are your solution limits enforced?
-- Will there be any throttling or blacklisting mechanisms in place?
-- Will there be any data recovery mechanisms in place?
-- If this is a multi-tenant solution, how are you dealing with noisy neighbor issues?
-- How will your solution be debugged when problems occur?
-- How will your solution recover in case of a brown-out?
-- Are there any operational tools required for your solution?
-
-11. **Risks and Open Issues**
-If there are any risks or unknowns, list them here. Are there any open questions which could impact your design for which you do not currently have answers? How are you going to get answers? Will any required team members be loaned to other teams during the time slated for implementation? Are all of required dependencies available in all the regions you need them? What are the one way doors, and are we sure we want to go through them?
-12. **Solutions considered and discarded**
-What alternatives have you have considered and discarded? Why don’t these work? Be brief, linking to other documents for details is ok, but always provide a summary inline.
-Only alternative solutions that an impartial observer would deem credible need be documented.
-If an alternative solution is not appropriate now, but may be in the future, please discuss potential migration paths.
-
-13. **Work Required**
-Include a high level breakdown of the work required to implement your proposed solution where appropriate. Also, specifically call out if this solution requires resources from other teams to be completed (away teams, dependencies etc.)
-
-14. **High-level Test Plan**
-At a high level, describe how your chosen solution be tested.
-
-15. **References**
-Links to any other documents that may be relevant, or sources you wish to cite.
+### Technical risks
+At the same time a team has its goals there are also risks which must not be overlooked. If the game has a level with a large map like in any Hitman game, one of those risks could be that the fact of having a vast number of entities and NPC's loaded at the same time makes the game go incredibly slow. In order to take the risks into account they are written down in the TDD.
 
 
+### Code style guidelines
+Being one of the most important of the TDD, in this section are described the code conventions that will be applied during the development of the whole project, in order to have an organized and homogeneous code that every programmer of the team is able both to understand and to work with. The thoroughness of the code style guidelines depends on the programming team and their objectives. Here are some examples of the elements one could find in this section:
+
+ - **Naming rules:** Explains in which language the code must be, how variables and functions must be named, the use of signs like parentheses and whitespaces or the need of     using comments. For example:
+
+  Every #define must be in capital letters:
+  #define MAX_HP 300
+  
+ - **Variables:** Explains how to manage the variables, how to declare and initialize them and whether to declare them inside public, protected or private part when using        classes or structs. For example:
+
+  Every time a pointer is created must be initialized as null:
+  int* test = nullptr;
+  
+ - **Loops:** Mentions which loops are preferred inside the code (while, do-while, for…) and when to use break and continue keywords.
+
+ - **Conditionals:** Describes how to manage conditionals, whether to separate the if line from the functions inside the conditional or to put everything in the same line, when  to use scopes {} or if it is preferred a conditional with operators or without them. For example:
+
+  We prefer a conditional like if(something) {}
+  rather than one like if(something == true) {}
+  
+ - **Classes & structs:** It is basically a convention of when to use classes and when structs and how to write the elements inside them.
+
+ - **XML:** Outlines the guidelines to write the variables in the XML files of the project and how to name their nodes and attributes. For example:
+
+ If a node has just one attribute we'll declare it in the same line:
+ <house colour="red"/>
+ 
+### External libraries
+In this section are detailed the external libraries which are going to be used for the development of the project and what are they going to be used for.
+
+### Code organization overview 
+Offers a general outlook of the structure the code will have and the inheritance relation between its classes. These diagrams show the functions and the variables included in each module. It is a guide used to see the whole picture of the code. Nevertheless, this guide will change as the project goes by and the game evolves, becoming more complex each time and being extended with more specified UML diagrams of the emergent code modules.
+
+### Performance budgets
+Related with the technical goals, the performance budgets are a series of limits imposed on the metrics that affect the game performance. Those could be the frames per second the game runs, the amount of disk memory is occupied by a certain feature of the game or the time it is expected for a map to be loading. Performance budgets serve as a point of reference for making decisions about design, technology and adding features. That enables the team to approach to the game with an established mentality about which standards their final result must accomplish.
 
 
+### Build delivery method
+This section describes the process that will be followed every time a build is delivered. It explains if there will be used an extern program, who will deliver the build and when will it be delivered.
 
+### Version list
+Planning beforehand what it is intended to have for each version of the game creates a guideline to follow when it comes to create the releases. In this way the team can identify in which phase of the development they are. 
 
+### Delivery platform and requirements
+It defines the target platform for which the game will be delivered, such as PC, Xbox, PS4 or other consoles. In addition, in this section is specified the minimum and the recommended hardware and software which are required to play it.
+
+## Extra sections
+The extra sections of a TDD are those which vary depending on the game or are not as important or necessary as the core sections.
+
+### Choice of game engine
+If the game is going to use a game engine this section explains which one has been decided to use and the reasons of this election. It also has a brief description of the features the chosen engine provides to the developers.
+
+### Art and audio tools
+In case there is no Art Bible and no Audio Bible, this section will specify which art tools will be used for the game art and audio and which tool will be used for each art or audio area.
+
+### 3D Objects, terrain and scene management
+In this section is explained which objects will be in each part of the map, which terrains will be used in the game and how will be the scene management.
+
+### Use of physics engine
+This section describes how will be de collision detection, how will be the physics calculated and applied to the game (gravity, friction…) and how will be the interaction of the characters or the other entities with the game world.
+
+### Artificial Intelligence
+If the game will have a complex AI system, it is very important it is conscientiously planned and detailed.
+
+### Networking
+In the case the game is multiplayer or has a multiplayer mode this section explains how it will be handled.
 
 
 
