@@ -1,10 +1,5 @@
 # TECH DESIGN DOCUMENT (TDD)
 
-[How to write a better technical design document](https://www.range.co/blog/better-tech-specs)<--Mirar
-
-[How to write technical design docs](https://dev.to/mage_ai/how-to-write-technical-design-docs-c02)
-
-
 ## Introduction
 The Technical Design Document provides a blueprint for the software engineers in your team to implement and code the features of your game. The technical design document will let your developers to specify - what are the requirements, how they should be implemented, along with the tools and technologies required for the implementation. The connection between structural design of a Software and Technical Design Document is that the technical design document has a broader scope with less details, than a software architecture diagram.
 
@@ -31,6 +26,7 @@ A TDD generally contains the following information:
 - Delivery platform & hardware/software requirements for running the game on a system.
 
 [Source](https://www.studytonight.com/3d-game-engineering-with-unity/tdd-and-gdd)
+
 [Source](https://medium.com/machine-words/writing-technical-design-docs-71f446e42f2e)
 
 
@@ -111,10 +107,14 @@ If the game will have a complex AI system, it is very important it is conscienti
 In the case the game is multiplayer or has a multiplayer mode this section explains how it will be handled.
 
 
+## Sources:
+- [Source](https://www.studytonight.com/3d-game-engineering-with-unity/tdd-and-gdd)
 
+- [Source](https://medium.com/machine-words/writing-technical-design-docs-71f446e42f2e)
 
+- [How to write a better technical design document](https://www.range.co/blog/better-tech-specs)
 
-
+- [How to write technical design docs](https://dev.to/mage_ai/how-to-write-technical-design-docs-c02)
 
 
 
